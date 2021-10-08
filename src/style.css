@@ -1,0 +1,42 @@
+h1,
+h2,
+.temperature,
+.unit-temp {
+  color: white;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 45px;
+  font-weight: 200;
+}
+.card {
+  background-color: #131950;
+  padding: 22px;
+}
+
+.col {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.unit-temp {
+  font-size: 35px;
+  font-weight: 300;
+}
+
+.temperature {
+  font-size: 70px;
+}
+.btn-success {
+  margin-left: 15px;
+}

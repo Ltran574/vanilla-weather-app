@@ -40,3 +40,8 @@ h3 {
 .btn-success {
   margin-left: 15px;
 }
+
+.footer {
+  margin: 108px;
+  font-family: "Roboto", sans-serif;
+}

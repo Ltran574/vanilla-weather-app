@@ -1,47 +1,74 @@
+body {
+  font-family: poppins;
+}
+
 h1,
 h2,
 .temperature,
-.unit-temp {
-  color: white;
+.celcius-temp,
+.fahrenheit-temp {
+  color: black;
 }
 
 h1 {
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: 200;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 h3 {
   font-size: 45px;
   font-weight: 200;
 }
-.card {
-  background-color: #131950;
-  padding: 22px;
+
+ul {
+  margin-top: 20px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 20px 20px;
+}
+
+.weather-app {
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
 }
 
 .col {
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 500px;
+  margin: 20px;
 }
 
-.unit-temp {
-  font-size: 35px;
+.celcius-temp,
+.fahrenheit-temp {
   font-weight: 300;
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
 
 .temperature {
   font-size: 70px;
-}
-.btn-success {
-  margin-left: 15px;
+  margin: 5px;
 }
 
 .footer {
   margin: 430px;
-  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  font-size: 10px;
 }

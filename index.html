@@ -15,17 +15,16 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container" style="max-width: 38rem">
+      <div class = weather-app>
+      <div class = "weather-app-wrapper">
       <form id="city-form">
         <div class="row">
           <div class="col-8">
@@ -33,73 +32,77 @@
               <input
                 type="text"
                 id="city-input"
-                placeholder="Search city "
-                class="form-control me-2"
+                placeholder="Type a city... "
+                class="form-control me-3"
               />
             </div>
           </div>
           <div class="col-4">
-          
-            <input type="submit" value="🔍" />
+            <input 
+            type="submit" 
+            value="Search" 
+            button type="button" 
+            class="btn btn-primary"/>
           </div>
         </div>
       </form>
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-6">
               <h1>
                 <span id="city">Sydney  </span>
               </h1>
-
               <h2>
-                <span id="temp-description"> Sunny </span></br>
                 <span id="current-date"
                   >Wednesday 12pm
                   <br />
                   15th September
                   <br
                 /></span>
+                   <br />
+                 <span id="temp-description"> Sunny </span></br>
               </h2>
             </div>
+            <div class="row">
             <div class="col-6">
-              <h3>
-                <span class="temperature"> ☀️ 17 </span
-                ><span class="unit-temp">°C </span>
-              </h3>
+               <div class="clearfix weather-temperature">
+                <img src="" id="icon" alt="" class="float-left" />
+                <span class="float-left">
+                <span class="temperature"> ☀️ 17</span
+                ><span class="celcius-temp">°C | </span> <span class="fahrenheit-temp"> °F  </span>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="card text-dark bg-light mb-3">
-        <div class="card-body">
+        <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span>km/h</li>
+              </ul>
+            </div>
+          </div>
           <div class="row">
             <div class="col">
-              <span><strong>Thu </strong></span> <br />
+             Thu <br />
               ☀️
               <br />
               15°C
             </div>
             <div class="col">
-              <span><strong>Fri </strong></span> <br />
+              Fri <br />
               🌧️
               <br />
               15°C
             </div>
             <div class="col">
-              <span><strong>Sat </strong></span> <br />
+             Sat  <br />
               ☀️
               <br />
               20°C
             </div>
             <div class="col">
-              <span><strong>Sun </strong></span> <br />
+              Sun <br />
               ☀️
               <br />
               23°C
             </div>
             <div class="col">
-              <span><strong>Mon </strong></span> <br />
+              Mon  <br />
               🌧️
               <br />
               15°C
@@ -109,6 +112,7 @@
       </div>
     </div>
     <span class="footer"> <a href= "https://github.com/Ltran574/weather-app" > Open source code </a> by Laura Tran </span>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -12,16 +12,14 @@ h2,
 
 h1 {
   font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 h2 {
-  font-size: 18px;
-  font-weight: 300;
-}
-
-h3 {
-  font-size: 45px;
-  font-weight: 200;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
 }
 
 ul {
@@ -35,6 +33,11 @@ li {
   padding: 0;
   font-size: 14px;
   line-height: 19px;
+  font-weight: 400;
+}
+
+li:first-letter {
+  text-transform: capitalize;
 }
 
 .weather-app-wrapper {
@@ -49,7 +52,7 @@ li {
 }
 
 .col {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500px;
   margin: 20px;
 }
@@ -59,11 +62,11 @@ li {
   font-weight: 300;
   position: relative;
   font-size: 16px;
-  top: -34px;
+  top: -32px;
 }
 
 .temperature {
-  font-size: 70px;
+  font-size: 60px;
   margin: 5px;
 }
 

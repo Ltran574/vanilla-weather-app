@@ -74,5 +74,15 @@ function getTemperature(response) {
   let temperatureElement = document.querySelector(".temperature");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let description = document.querySelector("#temp-description");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = response.data.wind.speed;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }

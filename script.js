@@ -45,6 +45,26 @@ function formatDate(date) {
   return formattedDate;
 }
 
+function getTemperature(response) {
+  console.log(response);
+  let temperatureElement = document.querySelector(".temperature");
+
+  let description = document.querySelector("#temp-description");
+  description.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = response.data.wind.speed;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celciusTemperature = Math.round(response.data.main.temp);
+}
+
 function showCity(event) {
   event.preventDefault();
 
@@ -65,24 +85,29 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=a867e25f2d83db579421a57fd8e937ec`;
   axios.get(apiUrl).then(getTemperature);
 }
+
+function displayfahrenheittemp(event) {
+  event.preventDefault();
+  let fahrenheittemperature = (celciusTemperature * 9) / 5 + 32;
+  let tempElement = document.querySelector(".temperature");
+  tempElement.innerHTML = fahrenheittemperature;
+}
+
+function displaycelciustemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(".temperature");
+  tempElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
 let cityForm = document.querySelector("#city-form");
 
 cityForm.addEventListener("submit", showCity);
 
-function getTemperature(response) {
-  console.log(response);
-  let temperatureElement = document.querySelector(".temperature");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  let description = document.querySelector("#temp-description");
-  description.innerHTML = response.data.weather[0].description;
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
-  let wind = document.querySelector("#wind");
-  wind.innerHTML = response.data.wind.speed;
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-}
+let fahrenheitlink = document.querySelector(".fahrenheit-temp");
+fahrenheitlink.addEventListener("click", displayfahrenheittemp);
+
+let celciuslink = document.querySelector(".celcius-temp");
+celciuslink.addEventListener("click", displaycelciustemp);
+
+searchCity("Sydney");

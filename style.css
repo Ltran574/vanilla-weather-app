@@ -51,10 +51,11 @@ li:first-letter {
   border-radius: 15px;
 }
 
-.col {
-  font-size: 16px;
+.weather-forecast {
+  font-size: 14px;
   font-weight: 500px;
   margin: 20px;
+  text-align: center;
 }
 
 .celcius-temp,
@@ -71,8 +72,12 @@ li:first-letter {
   margin: 5px;
 }
 
+.weather-temp-min {
+  opacity: 0.5;
+}
+
 .footer {
-  margin: 430px;
+  margin: 0, auto;
   margin-top: 20px;
   font-size: 10px;
 }

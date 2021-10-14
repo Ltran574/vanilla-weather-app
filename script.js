@@ -47,8 +47,8 @@ function formatDate(date) {
 
 function getTemperature(response) {
   console.log(response);
-  let temperatureElement = document.querySelector(".temperature");
-
+  let temperatureElement = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(response.data.main.temp);
   let description = document.querySelector("#temp-description");
   description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#humidity");
@@ -89,13 +89,13 @@ function searchCity(city) {
 function displayfahrenheittemp(event) {
   event.preventDefault();
   let fahrenheittemperature = (celciusTemperature * 9) / 5 + 32;
-  let tempElement = document.querySelector(".temperature");
-  tempElement.innerHTML = fahrenheittemperature;
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(fahrenheittemperature);
 }
 
 function displaycelciustemp(event) {
   event.preventDefault();
-  let tempElement = document.querySelector(".temperature");
+  let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = Math.round(celciusTemperature);
 }
 

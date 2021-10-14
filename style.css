@@ -1,5 +1,6 @@
 body {
   font-family: poppins;
+  color: black;
 }
 
 h1,
@@ -67,9 +68,14 @@ li:first-letter {
   text-decoration: none;
 }
 
-.temperature {
+#temperature {
   font-size: 60px;
   margin: 5px;
+}
+
+#temp-description,
+#city {
+  text-transform: capitalize;
 }
 
 .weather-temp-min {

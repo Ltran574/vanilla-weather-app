@@ -61,6 +61,7 @@ function getTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celciusTemperature = Math.round(response.data.main.temp);
 }
@@ -78,6 +79,34 @@ function showCity(event) {
     city.innerHTML = null;
     alert(`Please type a city`);
   }
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class = "weather-date">
+             ${day}  </div>
+              <img src="images/sunny.png"
+              alt=""
+              />
+               <div class = "weather-temperature">
+                 <span class = "weather-temp-max">
+              15°C </span>
+            <span class = "weather-temp-min"> 10°C </span>
+            </div>
+            </div>
+         `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function searchCity(city) {
@@ -111,3 +140,4 @@ let celciuslink = document.querySelector(".celcius-temp");
 celciuslink.addEventListener("click", displaycelciustemp);
 
 searchCity("Sydney");
+displayForecast();

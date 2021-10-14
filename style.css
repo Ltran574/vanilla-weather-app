@@ -87,3 +87,7 @@ li:first-letter {
   margin-top: 20px;
   font-size: 10px;
 }
+
+.float-left {
+  float: left;
+}

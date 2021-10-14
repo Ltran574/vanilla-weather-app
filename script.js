@@ -45,6 +45,13 @@ function formatDate(date) {
   return formattedDate;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=a867e25f2d83db579421a57fd8e937ec&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function getTemperature(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
@@ -64,6 +71,8 @@ function getTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celciusTemperature = Math.round(response.data.main.temp);
+
+  getForecast(response.data.coord);
 }
 
 function showCity(event) {
@@ -81,7 +90,8 @@ function showCity(event) {
   }
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -140,4 +150,3 @@ let celciuslink = document.querySelector(".celcius-temp");
 celciuslink.addEventListener("click", displaycelciustemp);
 
 searchCity("Sydney");
-displayForecast();

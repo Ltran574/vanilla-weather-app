@@ -23,7 +23,7 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container" style="max-width: 38rem">
+    <div class="container" style="max-width: 45rem">
       <div class="weather-app">
         <div class="weather-app-wrapper">
           <form id="city-form" class="mb-3">
@@ -42,7 +42,7 @@
                   value="Search"
                   button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-success"
                 />
               </div>
             </div>
@@ -51,6 +51,7 @@
             <span id="city"> Sydney</span>
           </h1>
           <h2>
+            Last updated:
             <span id="current-date"></span>
             <br />
             <span id="temp-description"> </span>
@@ -75,10 +76,10 @@
         </div>
         <div class="weather-forecast" id="forecast"></div>
       </div>
-      <span class="footer">
+      <div class="footer">
         <a href="https://github.com/Ltran574/weather-app"> Open source code </a>
         by Laura Tran
-      </span>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

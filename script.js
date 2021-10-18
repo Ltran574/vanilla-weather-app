@@ -61,7 +61,7 @@ function getTemperature(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = response.data.wind.speed;
+  wind.innerHTML = Math.round(response.data.wind.speed);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -140,28 +140,8 @@ function searchCity(city) {
   axios.get(apiUrl).then(getTemperature);
 }
 
-function displayfahrenheittemp(event) {
-  event.preventDefault();
-  let fahrenheittemperature = (celciusTemperature * 9) / 5 + 32;
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(fahrenheittemperature);
-}
-
-function displaycelciustemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temperature");
-  tempElement.innerHTML = Math.round(celciusTemperature);
-}
-
-let celciusTemperature = null;
 let cityForm = document.querySelector("#city-form");
 
 cityForm.addEventListener("submit", showCity);
-
-let fahrenheitlink = document.querySelector(".fahrenheit-temp");
-fahrenheitlink.addEventListener("click", displayfahrenheittemp);
-
-let celciuslink = document.querySelector(".celcius-temp");
-celciuslink.addEventListener("click", displaycelciustemp);
 
 searchCity("Sydney");
